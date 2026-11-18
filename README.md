@@ -119,15 +119,16 @@ address into `CONFIG.CONTRACT_ADDRESS` in `frontend/index.html`.
 
 1. **BNB for deployment + a deployer key.** Deployment costs ~777k gas
    (≈ Rp419 at the 0.05 gwei measured on 18 Nov 2026, ≈ Rp8,351 at
-   1 gwei). Cheap — but it must be paid from a funded deployer wallet,
-   and the deployer key has to come from the user. The user's Binance
-   Agentic Wallet (`dipta.ai`) is **not logged in** (pairing expired) and
-   holds only **~Rp4,628 total**, so it cannot fund this as-is. Practical
-   path: fund a fresh throwaway deployer key with ~0.001 BNB (≈ Rp11,000)
-   — needs the user's explicit approval + the top-up.
-2. **Public repo.** The hackathon requires open-source code (and BscScan
-   source verification). The code lives in this folder only; it needs to
-   be pushed to a public GitHub repo. The user has **no GitHub account**.
+   1 gwei). Cheap — but it must be paid from a funded deployer wallet.
+   Status 18 Nov 2026 evening: the `dipta.ai` Agentic Wallet **is logged
+   in** and holds **0.000136 BNB (~$0.08)** — enough for the deploy gas
+   itself at low gas price, but Binance blocks the transfer until the
+   deployer address is added to the wallet's address book in the Binance
+   app. Deployer key ready: `0xc19f7d609Ac8e3e3d57b14260A298DD9C8Af1Ff1`
+   (private key held off-repo). Next step: add that address to the
+   address book, fund it, deploy.
+2. **Public repo — DONE.** Code is open-source here:
+   https://github.com/damarpradipta406/agentwall (public, MIT).
 3. **30 Agent ID holders.** The Innovation Award requires the product to
    be live with **at least 30 Agent ID addresses interacting** during the
    submission period, and the Project Awards rank by interacting Agent ID
@@ -144,7 +145,7 @@ address into `CONFIG.CONTRACT_ADDRESS` in `frontend/index.html`.
 - [x] Idea + contract + tests + frontend + gas measured
 - [ ] Fund deployer wallet (~0.001 BNB) + deploy to BSC mainnet
 - [ ] Verify source on BscScan (needs a free BscScan API key)
-- [ ] Push code to a public repo (needs a GitHub account)
+- [x] Push code to a public repo: https://github.com/damarpradipta406/agentwall
 - [ ] Set `CONTRACT_ADDRESS` in the frontend, host it somewhere public
 - [ ] Submit project name, website, contract address(es), Agent ID usage
       description during the Submission Period (by 9 Dec 2026 08:00 UTC)
